@@ -89,6 +89,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Deploy containers
+        env:
+          POSTGRESQL_URL: ${{ secrets.POSTGRESQL_URL }}
+          POSTGRESQL_USER: ${{ secrets.POSTGRESQL_USER }}
+          POSTGRESQL_PASS: ${{ secrets.POSTGRESQL_PASS }}
+          POSTGRESQL_DB: ${{ secrets.POSTGRESQL_DB }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: |
           docker compose pull
           docker compose up -d
@@ -113,6 +119,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Deploy containers
+        env:
+          POSTGRESQL_URL: ${{ secrets.POSTGRESQL_URL }}
+          POSTGRESQL_USER: ${{ secrets.POSTGRESQL_USER }}
+          POSTGRESQL_PASS: ${{ secrets.POSTGRESQL_PASS }}
+          POSTGRESQL_DB: ${{ secrets.POSTGRESQL_DB }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: |
           docker compose pull
           docker compose up -d
