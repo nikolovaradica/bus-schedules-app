@@ -42,6 +42,7 @@ jobs:
         working-directory: frontend
         run: |
           npm install
+          npx tsc --project tsconfig.json || true
           npm run build
       
       - name: Login to GitHub Container Registry
